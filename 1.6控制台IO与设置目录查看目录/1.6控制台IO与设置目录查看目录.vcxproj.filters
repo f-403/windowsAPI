@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="1.6控制台IO与设置目录查看目录.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

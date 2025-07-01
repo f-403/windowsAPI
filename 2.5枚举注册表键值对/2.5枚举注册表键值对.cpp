@@ -11,7 +11,7 @@ int main()
 
     //先打注册表
     HKEY key;
-    LSTATUS check = RegCreateKeyExW(HKEY_CURRENT_USER,L"Software\\360Safe\\360Scan\\",0,NULL,0L,KEY_ALL_ACCESS,NULL,&key,NULL);
+    LSTATUS check = RegCreateKeyExW(HKEY_CURRENT_USER,L"AAAAA\\abc\\",0,NULL,0L,KEY_ALL_ACCESS,NULL,&key,NULL);
     if (check == ERROR_SUCCESS) {
         std::cout << "打开成功" << std::endl;
         //RegCloseKey(key);

@@ -1,0 +1,23 @@
+如果资源类型已知：
+1。 加载DLL  LoadLibraryW
+
+2。 在dll中查找资源 ，findresource
+3。 用LoadResource 函数获取资源
+4。若要获取指向资源数据第一个字节的指针，请调用 LockResource 函数;若要获取资源的大小，请调用 SizeofResource。
+5. 用createfILE创文件再用writefile写文件
+
+
+如果资源类型未知， 要枚举所有类型:
+1。 加载DLL  LoadLibraryW
+//注意， 如果你不想获得资源实际数据， 你不用loadresource
+2。 利用EnumResourceTypesW 枚举资源类型
+3. 在枚举自定义函数中， 查找lpType, 如果是整型， 输出数字， 其他按字符串输出
+
+
+枚举对应类型下的名称：
+1。 加载DLL  LoadLibraryW
+//注意， 如果你不想获得资源实际数据， 你不用loadresource
+2。 利用EnumResourceTypesW 枚举资源类型
+3. 在枚举自定义函数中， 查找lpType, 如果是整型， 输出数字， 其他按字符串输出
+4。在EnumResourceTypesW的回调函数中， 调用EnumResourceNamesW来获得类型下面的名称， EnumResourceNamesW里也有回调函数， 用于处理名称
+4。EnumResourceNamesW的回调函数中， 处理名称

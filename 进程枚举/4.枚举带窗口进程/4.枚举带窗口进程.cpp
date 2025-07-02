@@ -6,7 +6,8 @@ BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam) {
     SetConsoleOutputCP(CP_UTF8);
     std::locale::global(std::locale(""));
     DWORD pid;
-    if (GetWindowThreadProcessId(hwnd, &pid)) {//如果出错， 返回0,获取窗口进程ID
+	//DOWRD 窗口线程PID = GetWindowThreadProcessId(hwnd, &pid)
+    if (GetWindowThreadProcessId(hwnd, &pid)) {//如果出错， 返回0,获取窗口进程ID，会存进pid变量， 返回值为窗口线程的id
 
         TCHAR title[256];
         if (GetWindowText(hwnd, title, 256)) {
